@@ -1,0 +1,90 @@
+@use '../abstract/' as a;
+
+
+.ingredients-table-header {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+.shell-table {
+    & .ingredients-table-header {
+        background-color: a.$dpurple;
+    }
+    & .ingredient-row__name {
+        background-color: a.$dpurple;
+    }
+    
+}
+
+.crustacean-table {
+    & .ingredients-table-header {
+        background-color: a.$dmarine;
+    }
+    & .ingredient-row__name {
+        background-color: a.$dmarine;
+    }
+    
+}
+
+.fruit-table {
+    & .ingredients-table-header {
+        background-color: a.$dyellow;
+    }
+    & .ingredient-row__name {
+        background-color: a.$dyellow;
+    }
+    
+}
+
+.game-table {
+    & .ingredients-table-header {
+        background-color: a.$dred;
+    }
+    & .ingredient-row__name {
+        background-color: a.$dred;
+    }
+    
+}
+
+.frog-table {
+    & .ingredients-table-header {
+        background-color: a.$dturquoise;
+    }
+    & .ingredient-row__name {
+        background-color: a.$dturquoise;
+    }
+    
+}
+
+.vegetable-table {
+    & .ingredients-table-header {
+        background-color: a.$dgreen;
+    }
+    & .ingredient-row__name {
+        background-color: a.$dgreen;
+    }
+    
+}
+
+.fish-table {
+    & .ingredients-table-header {
+        background-color: a.$dblue;
+    }
+    & .ingredient-row__name {
+        background-color: a.$dblue;
+    }
+    
+}
+
+.poultry-table {
+    & .ingredients-table-header {
+        background-color: a.$dorange;
+    }
+    & .ingredient-row__name {
+        background-color: a.$dorange;
+    }
+    
+}

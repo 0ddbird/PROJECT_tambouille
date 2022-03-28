@@ -1,13 +1,17 @@
-import './pre-start'; // Must be the first import
-import logger from 'jet-logger';
-import server from './server';
+import express, { Express, Request, Response } from 'express';
+import cors from 'cors'
+import router from './routes'
 
 
-// Constants
-const serverStartMsg = 'Express server started on port: ',
-        port = (process.env.PORT || 3000);
+const app: Express = express();
+app.use(cors())
+app.use(router)
+const port = 3001
 
-// Start server
-server.listen(port, () => {
-    logger.info(serverStartMsg + port);
-});
+app.get('/', (request: Request, response: Response) => {
+    response.send('Express + TypeScript Server');
+  });
+  
+  app.listen(port, () => {
+    console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
+  });   

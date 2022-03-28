@@ -1,0 +1,24 @@
+.ingredient-row {
+    display: flex;
+    height: 2em;
+    color: white;
+}
+
+.ingredient-row__name {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+}
+.ingredient-row__months {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.month {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

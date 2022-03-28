@@ -1,0 +1,20 @@
+@use '../abstract/' as a;
+.months-menu {
+    padding-left: 180px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: sticky;
+    top: 90px;
+    right: 0;
+    left: 0;
+    background-color: #2b2b2B;
+}
+
+.month-button {
+    border: 1px solid a.$dyellow;
+    border-radius: 5px;
+    height: 2em;
+    margin: 0 1px;
+    background: a.$dyellow;
+    color: white;
+}

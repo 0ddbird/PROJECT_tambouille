@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC, useState, useEffect } from 'react'
+import IngredientTable from './components/IngredientTable'
+import { Iingredient } from './types'
+import MonthsMenu from './components/MonthsMenu'
+import Header from './components/Layout/Header'
+import callApi from './ApiProvider'
 
-function App() {
+const path = '/ingredients'
+
+const App: FC = () => {
+  const [ingredients, setIngredients] = useState<Iingredient[][]>([])
+  useEffect(() => {
+    callApi(path).then(ingredientData => {
+      setIngredients(ingredientData)
+    })
+  }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <MonthsMenu />
+        <div className="tables-wrapper">
+          {
+            ingredients.map(array => {
+              return <IngredientTable key={ingredients.indexOf(array)} ingredients={array}/>
+            })
+          }
+        </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

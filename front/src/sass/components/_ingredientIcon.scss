@@ -1,0 +1,12 @@
+@use '../abstract/' as a;
+.availability-0 {
+    color: a.$lgreen;
+}
+
+.availability-1 {
+    color: a.$lorange;
+}
+
+.availability-2 {
+    color: a.$lred;
+}
