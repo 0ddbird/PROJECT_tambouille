@@ -1,5 +1,5 @@
 import React from 'react'
-import { Iingredient } from '../types'
+import { Iproduct } from '../../types'
 import { v4 as uuidv4 } from 'uuid'
 import { faCircleCheck, faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,7 +10,7 @@ const cross = (availability: number) => (<FontAwesomeIcon icon={faCircleXmark} c
 
 const availabilityMap = [circleCheck, simpleCheck, cross]
 
-const IngredientRow: React.FC<Iingredient> = ({ name, category, months, id }: Iingredient) => {
+const IngredientRow: React.FC<Iproduct> = ({ name, category, months, id }: Iproduct) => {
   return (
     <div className={`ingredient-row ${category}`} key={name}>
         <div className='ingredient-row__name'>

@@ -1,0 +1,10 @@
+@use '../abstract/' as a;
+.navlink {
+    text-decoration: none;
+    color: white;
+    margin: 0 5px;
+}
+
+.nav-active {
+    color: a.$dyellow;
+}

@@ -1,10 +1,17 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+import Menu from './NavMenu'
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
         <div className="header">
-            <span>🍲</span><h1>Tambouille</h1>
 
+          <NavLink to='/'
+          className="logo">
+            <span className="logo-icon">🍲</span><h1 className="logo-name">Tambouille</h1>
+          </NavLink>
+
+            {<Menu />}
         </div>
   )
 }

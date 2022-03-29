@@ -1,9 +1,9 @@
 import React from 'react'
-import { Iingredient } from '../types'
-import IngredientRow from './IngredientRow'
+import { Iproduct } from '../../types'
+import IngredientRow from './ProductRow'
 
 interface IProps {
-    ingredients: Iingredient[]
+    ingredients: Iproduct[]
 }
 
 const IngredientTable: React.FC<IProps> = ({ ingredients }: IProps) => {

@@ -1,6 +1,6 @@
 // const months [= ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D']
 import { v4 as uuidv4 } from 'uuid'
-import { Iingredient } from '../types'
+import { Iproduct, Iingredients } from '../types'
 
 /*
 {
@@ -9,7 +9,7 @@ import { Iingredient } from '../types'
   2: 'not available'
 }
  */
-const shellsAndMolluscs:Iingredient[] = [
+const shellsAndMolluscs:Iproduct[] = [
   {
     name: 'bigorneau',
     id: uuidv4(),
@@ -66,7 +66,7 @@ const shellsAndMolluscs:Iingredient[] = [
   }
 ]
 
-const crustaceans:Iingredient[] = [
+const crustaceans:Iproduct[] = [
   {
     name: 'araignée de mer',
     id: uuidv4(),
@@ -111,7 +111,7 @@ const crustaceans:Iingredient[] = [
   }
 ]
 
-const fruits:Iingredient[] = [
+const fruits:Iproduct[] = [
   {
     name: 'abricot',
     id: uuidv4(),
@@ -283,7 +283,7 @@ const fruits:Iingredient[] = [
 
 ]
 
-const games:Iingredient[] = [
+const games:Iproduct[] = [
   {
     name: 'chevreuil',
     id: uuidv4(),
@@ -323,7 +323,7 @@ const games:Iingredient[] = [
 
 ]
 
-const frog:Iingredient[] = [
+const frog:Iproduct[] = [
   {
     name: 'grenouille',
     id: uuidv4(),
@@ -332,7 +332,7 @@ const frog:Iingredient[] = [
   }
 ]
 
-const vegetables:Iingredient[] = [
+const vegetables:Iproduct[] = [
   {
     name: 'artichaut',
     id: uuidv4(),
@@ -545,7 +545,7 @@ const vegetables:Iingredient[] = [
   }
 ]
 
-const fishes:Iingredient[] = [
+const fishes:Iproduct[] = [
   {
     name: 'anchois',
     id: uuidv4(),
@@ -722,7 +722,7 @@ const fishes:Iingredient[] = [
   }
 ]
 
-const poultryAndRabbit:Iingredient[] = [
+const poultryAndRabbit:Iproduct[] = [
   {
     name: 'caille',
     id: uuidv4(),
@@ -786,8 +786,55 @@ const poultryAndRabbit:Iingredient[] = [
 
 ]
 
-const allIngredients: Iingredient[][] = []
+const allIngredients: Iproduct[][] = []
+
+const myIngredients: Iingredients = {
+  shells: [],
+  crustaceans: [],
+  fruits: [
+    {
+      name: 'pomme',
+      category: 'Fruit',
+      quantity: 2
+    },
+    {
+      name: 'fraise',
+      category: 'Fruit',
+      quantity: 4
+    }
+  ],
+  meat: [
+    {
+      name: 'boeuf',
+      category: 'Viande',
+      quantity: 1
+    },
+    {
+      name: 'poulet',
+      category: 'Viande',
+      quantity: 2
+    },
+    {
+      name: 'canard',
+      category: 'Viande',
+      quantity: 1
+    }
+  ],
+  vegetables: [
+    {
+      name: 'carotte',
+      category: 'Légume',
+      quantity: 6
+    },
+    {
+      name: 'poireau',
+      category: 'Légume',
+      quantity: 3
+    }
+  ],
+  fishes: []
+}
 
 allIngredients.push(shellsAndMolluscs, crustaceans, fruits, games, frog, vegetables, fishes, poultryAndRabbit)
 
-export { allIngredients, shellsAndMolluscs, crustaceans, fruits, games, frog, vegetables, fishes, poultryAndRabbit }
+export { myIngredients, allIngredients, shellsAndMolluscs, crustaceans, fruits, games, frog, vegetables, fishes, poultryAndRabbit }

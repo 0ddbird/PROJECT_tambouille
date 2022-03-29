@@ -1,31 +1,24 @@
-import React, { FC, useState, useEffect } from 'react'
-import IngredientTable from './components/IngredientTable'
-import { Iingredient } from './types'
-import MonthsMenu from './components/MonthsMenu'
-import Header from './components/Layout/Header'
-import callApi from './ApiProvider'
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import IngredientsBySeason from './pages/Seasons'
+import Home from './pages/Home'
+import NotFound from './pages/NotFound'
+import Cook from './pages/Cook'
+import MyIngredients from './pages/MyIngredients'
 
-const path = '/ingredients'
-
-const App: FC = () => {
-  const [ingredients, setIngredients] = useState<Iingredient[][]>([])
-  useEffect(() => {
-    callApi(path).then(ingredientData => {
-      setIngredients(ingredientData)
-    })
-  }, [])
+const App = () => {
   return (
-    <div className="App">
-      <Header />
-      <MonthsMenu />
-        <div className="tables-wrapper">
-          {
-            ingredients.map(array => {
-              return <IngredientTable key={ingredients.indexOf(array)} ingredients={array}/>
-            })
-          }
+        <div className="App">
+          <BrowserRouter>
+            <Routes>
+              <Route path='/' element = {<Home />} />
+              <Route path='/ingredients/' element={<IngredientsBySeason/>} />
+              <Route path='/cuisiner/' element={<Cook />} />
+              <Route path='mes-ingredients' element={<MyIngredients />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
         </div>
-    </div>
   )
 }
 

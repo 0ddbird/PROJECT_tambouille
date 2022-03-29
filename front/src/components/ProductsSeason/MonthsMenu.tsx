@@ -2,7 +2,7 @@ import React from 'react'
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
-const MonthsMenu = () => {
+const MonthsMenu: React.FC = () => {
   return (
         <div className="months-menu">
             {
